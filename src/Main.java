@@ -64,5 +64,7 @@ public class Main {
         mainFrame.setSize(500, 500);
         mainFrame.setLayout(null);
         mainFrame.setVisible(true);
+        mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        return;
     }
 }
