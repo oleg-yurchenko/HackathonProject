@@ -43,8 +43,14 @@ public class ThreadedChecker extends Thread{
                 exit = true;
             }
         });
+        if (!CloseApps.bufferedWhitelist.isEmpty()) {
+            for (int i = 0; i < CloseApps.bufferedWhitelist.size(); ++i) {
+                processes.add(CloseApps.bufferedWhitelist.get(i));
+            }
+        }
 
         for (int i=0; i<processes.size(); ++i){
+            System.out.println(CloseApps.bufferedWhitelist.toString());
             processesCheckBoxs.add(new JCheckBox(processes.get(i)));
             processesCheckBoxs.get(i).setBounds(50, 10+i*15, 400, 15);
             try {
@@ -75,6 +81,9 @@ public class ThreadedChecker extends Thread{
         for(int i=0; i<processesCheckBoxs.size(); ++i){
             if(processesCheckBoxs.get(i).isSelected()){
                 whitelistSelected.add(processesCheckBoxs.get(i).getText());
+                if(!CloseApps.bufferedWhitelist.contains(processesCheckBoxs.get(i).getText())){
+                    CloseApps.bufferedWhitelist.add(processesCheckBoxs.get(i).getText());
+                }
             }
         }
 

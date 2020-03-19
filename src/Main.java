@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         JFrame mainFrame = new JFrame();
         final ThreadedChecker[] threadedChecker = {new ThreadedChecker()};
-        CloseApps threadedCloser = new CloseApps();
+        CloseApps threadedCloser[] = {new CloseApps()};
 
         final JButton activeButton = new JButton("Activate");
         JButton editWhitelist = new JButton("Edit Whitelist");
@@ -32,8 +32,10 @@ public class Main {
                 if(onOff.getText().equals("Program is not running")){
                     onOff.setText("Program is running");
                     activeButton.setText("Deactivate");
-                    threadedCloser.start();
+                    CloseApps.done = false;
+                    threadedCloser[0].start();
                 } else {
+                    threadedCloser[0] = new CloseApps();
                     onOff.setText("Program is not running");
                     activeButton.setText("Activate");
                     CloseApps.done = true;
@@ -44,10 +46,10 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
-                    threadedChecker[0].start();
-                } catch (IllegalThreadStateException err){
-                    try {
-                        threadedChecker[0] = new ThreadedChecker();
+                            threadedChecker[0].start();
+                        } catch (IllegalThreadStateException err){
+                            try {
+                                threadedChecker[0] = new ThreadedChecker();
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
