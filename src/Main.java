@@ -17,9 +17,9 @@ public class Main {
         CloseApps threadedCloser[] = {new CloseApps()};
 
         final JButton activeButton = new JButton("Activate");
-        JButton editWhitelist = new JButton("Edit Whitelist");
+        JButton editWhitelist = new JButton("Edit Blacklist");
         activeButton.setBounds(200, 190, 100,40);
-        editWhitelist.setBounds(200, 240, 100, 40);
+        editWhitelist.setBounds(190, 240, 120, 40);
 
         JLabel mainText = new JLabel("Welcome to the application");
         mainText.setBounds(175, 100, 300, 100);

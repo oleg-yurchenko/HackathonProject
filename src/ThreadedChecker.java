@@ -43,10 +43,16 @@ public class ThreadedChecker extends Thread{
                 exit = true;
             }
         });
-        if (!CloseApps.bufferedWhitelist.isEmpty()) {
-            for (int i = 0; i < CloseApps.bufferedWhitelist.size(); ++i) {
-                processes.add(CloseApps.bufferedWhitelist.get(i));
+        try {
+            if (!CloseApps.whitelistedApps.isEmpty()) {
+                for (int i = 0; i < CloseApps.whitelistedApps.size(); ++i) {
+                    if (!processes.contains(CloseApps.whitelistedApps.get(i))) {
+                        processes.add(CloseApps.whitelistedApps.get(i));
+                    }
+                }
             }
+        }catch (NullPointerException err){
+            ;
         }
 
         for (int i=0; i<processes.size(); ++i){

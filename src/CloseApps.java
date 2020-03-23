@@ -8,13 +8,18 @@ public class CloseApps extends Thread{
     public static boolean done = false;
 
     public void run() {
+        for(int i=0; i<bufferedWhitelist.size(); ++i){
+            if(!whitelistedApps.contains(bufferedWhitelist.get(i))){
+                whitelistedApps.add(bufferedWhitelist.get(i));
+            }
+            bufferedWhitelist.clear();
+        }
         if(!(whitelistedApps == null || allProcesses == null)) {
             while (!done) {
                 try {
                     for (int i = 0; i < allProcesses.size(); ++i) {
                         if (whitelistedApps.contains(allProcesses.get(i))) {
                             try {
-                                System.out.println(allProcesses.get(i));
                                 Runtime.getRuntime().exec("taskkill /F /IM " + allProcesses.get(i));
                             } catch (IOException e) {
                                 e.printStackTrace();
