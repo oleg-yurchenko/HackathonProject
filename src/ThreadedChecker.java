@@ -15,6 +15,8 @@ public class ThreadedChecker extends Thread{
     JFrame optionsFrame = new JFrame();
     boolean exit = false;
     ArrayList<JCheckBox> processesCheckBoxs = new ArrayList<JCheckBox>();
+    JTextField searchField = new JTextField();
+    JButton exitButton = new JButton("Exit");
     public static ArrayList<String> getProcesses() throws IOException {
         String line;
         ArrayList<String> parsedLine = new ArrayList<String>();
@@ -34,12 +36,19 @@ public class ThreadedChecker extends Thread{
         System.out.println(parsedLine.toString());
         return parsedLine;
     }
+    public void checkBoxLister(ArrayList<String> processList) {
+        for (int i=0; i<processesCheckBoxs.size(); ++i){
+            if(processList.contains(processesCheckBoxs.get(i).getText())){
+                processesCheckBoxs.get(i).setVisible(true);
+            } else {
+                processesCheckBoxs.get(i).setVisible(false);
+            }
+        }
+    }
     public void changeWhitelist() {
-        JButton exitButton = new JButton("Exit");
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                optionsFrame.dispose();
                 exit = true;
             }
         });
@@ -56,9 +65,8 @@ public class ThreadedChecker extends Thread{
         }
 
         for (int i=0; i<processes.size(); ++i){
-            System.out.println(CloseApps.bufferedWhitelist.toString());
             processesCheckBoxs.add(new JCheckBox(processes.get(i)));
-            processesCheckBoxs.get(i).setBounds(50, 10+i*15, 400, 15);
+            processesCheckBoxs.get(i).setBounds(250, 50+i*15, 300, 15);
             try {
                 if (previouslyWhitelisted.contains(processesCheckBoxs.get(i).getText())) {
                     processesCheckBoxs.get(i).setSelected(true);
@@ -67,10 +75,13 @@ public class ThreadedChecker extends Thread{
                 ;
             }
             optionsFrame.add(processesCheckBoxs.get(i));
-            exitButton.setBounds(170, 30+i*15, 100, 20);
+            exitButton.setBounds(300, 70+i*15, 100, 20);
         }
 
+        searchField.setBounds(300, 20, 200, 20);
+
         optionsFrame.add(exitButton);
+        optionsFrame.add(searchField);
         optionsFrame.setSize(800, 800);
         optionsFrame.setLayout(null);
         optionsFrame.setVisible(true);
@@ -98,12 +109,24 @@ public class ThreadedChecker extends Thread{
     public ThreadedChecker() throws IOException {
         processes = getProcesses();
     }
+    public void searchWhitelist() {
+        String query = searchField.getText();
+        ArrayList<String> queriedProcesses = new ArrayList<String>();
+        for(int i=0; i<processes.size(); ++i){
+            if(processes.get(i).toLowerCase().contains(query.toLowerCase())){
+                queriedProcesses.add(processes.get(i));
+            }
+        }
+        checkBoxLister(queriedProcesses);
+    }
     public void run() {
         changeWhitelist();
         while(!exit){
             previouslyWhitelisted = checkWhitelist();
+            searchWhitelist();
             CloseApps.whitelistedApps = checkWhitelist();
             CloseApps.allProcesses = processes;
         }
+        optionsFrame.dispose();
     }
 }
