@@ -17,6 +17,7 @@ public class ThreadedChecker extends Thread{
     ArrayList<JCheckBox> processesCheckBoxs = new ArrayList<JCheckBox>();
     JTextField searchField = new JTextField();
     JButton exitButton = new JButton("Exit");
+    ImageIcon icon = new ImageIcon("C:\\Users\\oleg\\IdeaProjects\\HackathonTesting\\settings.png");
     public static ArrayList<String> getProcesses() throws IOException {
         String line;
         ArrayList<String> parsedLine = new ArrayList<String>();
@@ -33,7 +34,6 @@ public class ThreadedChecker extends Thread{
                 parsedLine.add(line.split("\"")[1]);
             }
         }
-        System.out.println(parsedLine.toString());
         return parsedLine;
     }
     public void checkBoxLister(ArrayList<String> processList) {
@@ -70,19 +70,24 @@ public class ThreadedChecker extends Thread{
             try {
                 if (previouslyWhitelisted.contains(processesCheckBoxs.get(i).getText())) {
                     processesCheckBoxs.get(i).setSelected(true);
+                    processesCheckBoxs.get(i).setForeground(Color.RED);
                 }
             } catch (NullPointerException err){
                 ;
             }
+            processesCheckBoxs.get(i).setForeground(new Color(188, 19, 254));
+            processesCheckBoxs.get(i).setBackground(new Color(20, 70, 90));
             optionsFrame.add(processesCheckBoxs.get(i));
             exitButton.setBounds(300, 70+i*15, 100, 20);
         }
 
         searchField.setBounds(300, 20, 200, 20);
 
+        optionsFrame.setIconImage(icon.getImage());
+        optionsFrame.getContentPane().setBackground(new Color(20, 70, 90));
         optionsFrame.add(exitButton);
         optionsFrame.add(searchField);
-        optionsFrame.setSize(800, 800);
+        optionsFrame.setSize(800, 140+processesCheckBoxs.size()*15);
         optionsFrame.setLayout(null);
         optionsFrame.setVisible(true);
         optionsFrame.addWindowListener(new WindowAdapter() {

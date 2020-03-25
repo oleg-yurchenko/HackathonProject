@@ -8,6 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="49003e23-bd36-4006-8032-7027795ed9a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThreadedChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadedChecker.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +45,13 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\oleg\IdeaProjects\HackathonTesting" />
+      <recent name="C:\Users\oleg\IdeaProjects\HackathonTesting\out\production\HackathonTesting" />
+      <recent name="C:\Users\oleg\IdeaProjects\HackathonTesting\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

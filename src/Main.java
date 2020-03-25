@@ -1,13 +1,13 @@
 import org.w3c.dom.css.Rect;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class Main {
@@ -16,14 +16,19 @@ public class Main {
         final ThreadedChecker[] threadedChecker = {new ThreadedChecker()};
         CloseApps threadedCloser[] = {new CloseApps()};
 
+        ImageIcon icon = new ImageIcon("C:\\Users\\oleg\\IdeaProjects\\HackathonTesting\\logo.png");
+        mainFrame.setIconImage(icon.getImage());
+
         final JButton activeButton = new JButton("Activate");
         JButton editWhitelist = new JButton("Edit Blacklist");
         activeButton.setBounds(200, 190, 100,40);
         editWhitelist.setBounds(190, 240, 120, 40);
 
         JLabel mainText = new JLabel("Welcome to the application");
+        mainText.setForeground(new Color(188, 19, 254));
         mainText.setBounds(175, 100, 300, 100);
         JLabel onOff = new JLabel("Program is not running");
+        onOff.setForeground(new Color(188, 19, 254));
         onOff.setBounds(190, 250, 300, 100);
 
         activeButton.addActionListener(new ActionListener() {
@@ -63,6 +68,7 @@ public class Main {
         mainFrame.add(onOff);
         mainFrame.add(editWhitelist);
 
+        mainFrame.getContentPane().setBackground(new Color(20, 70, 90));
         mainFrame.setSize(500, 500);
         mainFrame.setLayout(null);
         mainFrame.setVisible(true);
