@@ -68,6 +68,7 @@ public class Main {
         mainFrame.add(onOff);
         mainFrame.add(editWhitelist);
 
+        mainFrame.setTitle("Productivity Pro");
         mainFrame.getContentPane().setBackground(new Color(20, 70, 90));
         mainFrame.setSize(500, 500);
         mainFrame.setLayout(null);

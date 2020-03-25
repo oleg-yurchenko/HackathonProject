@@ -83,6 +83,7 @@ public class ThreadedChecker extends Thread{
 
         searchField.setBounds(300, 20, 200, 20);
 
+        optionsFrame.setTitle("Blacklist");
         optionsFrame.setIconImage(icon.getImage());
         optionsFrame.getContentPane().setBackground(new Color(20, 70, 90));
         optionsFrame.add(exitButton);

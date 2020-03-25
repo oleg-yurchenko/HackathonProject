@@ -8,10 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="49003e23-bd36-4006-8032-7027795ed9a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/HackathonTesting_jar/HackathonTesting.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HackathonTesting_jar/HackathonTesting.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackathonTesting/ThreadedChecker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
